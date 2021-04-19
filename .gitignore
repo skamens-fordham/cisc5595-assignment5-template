@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Programs built here
+execute
+__pycache__
