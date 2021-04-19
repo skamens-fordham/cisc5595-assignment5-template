@@ -37,32 +37,6 @@ class MemoryManagerBase {
                              int location    // Memory location to release
         ) = 0;
 
-        // Write to memory
-        // This function is implemented in this base class because it should be 
-        // the same for all memory managers
-        //
-        // Arguments:
-        //      process_id: The process ID that is writing to the memory. Only the process that
-        //                  allocated the memory can write to it
-        //      location: Location of memory to write to
-        //      data:     an array of characters that should be written to the memory location
-        //      length:   Number of bytes to write into memory
-        // Returns true for a successful write, false otherwise
-        virtual bool write(int process_id, int location, const char * data, int length);
-
-        // Read from memory
-        // This function is implemented in this base class because it should be the same
-        // for all managers
-        //
-        // Arguments: 
-        //      process_id: The process ID that is reading from the memory. Only the process
-        //                  that allocated the memory can read from it
-        //      location: Location to read from
-        //      data: An array of characters to read into. This array must be at least as 
-        //            large as the "length" parameter to have room for the data that is read
-        //      length: Number of bytes to read
-        // Returns true for a successful read, false otherwise
-        virtual bool read (int process_id, int location, char * data, int length);
 
         // Print the contents of memory
         // This should print one line for each block of memory, including all the information

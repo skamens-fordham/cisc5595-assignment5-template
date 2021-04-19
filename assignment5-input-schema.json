@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title" : "Operating Systems Assignment 2 Input",
+    "description": "Schema for the input file for assignment 2",
+    "type" : "object",
+    "properties" : {
+        "options" : {
+            "description": "Options related to this input file",
+            "type": "object",
+            "properties": {
+                "memory_size" : {
+                    "description": "Overall size of memory to allocate",
+                    "type" : "integer"
+                },
+                "algorithm" : {
+                    "description": "Memory management algorithm",
+                    "type" : "string",
+                    "enum" : ["first_fit", "best_fit"]
+                }
+            }, 
+        "required" : [ "memory_size", "algorithm"]
+        },
+        "actions" : {
+            "description" : "Sequence of memory operations to execute",
+            "type" : "array",
+            "items" : {
+                "type" : "object", 
+                "properties" : {                
+                    "process_id": {
+                        "description": "Process ID that is performing the memory access",
+                        "type" : "integer"
+                    },
+                    "action" : {
+                        "description": "Action to take",
+                        "type" : "string",
+                        "enum" : ["allocate", "release"]
+                    },
+                    "size" : {
+                        "description": "Size associated with the action",
+                        "type" : "integer"
+                    },
+                    "tag" : {
+                        "description": "Tag to associate with the memory that will be (or was) allocated",
+                        "type" : "string"
+                    }
+                }
+            },
+            "required" : ["process_id", "action", "tag"]
+        }
+    },
+    "required": [ "options", "actions"]
+}

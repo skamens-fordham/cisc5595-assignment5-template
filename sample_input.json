@@ -1,4 +1,10 @@
-{ "accesses" : 
+{
+	"$schema": "./assignment5-input-schema.json",
+	"options" : {
+		"memory_size" : 128,
+		"algorithm" : "first_fit"
+	}, 
+	"actions" : 
 	[
 		{"process_id": 1, "action": "allocate", "size" : 5, "tag" : "1_1"},
 		{"process_id": 2, "action": "allocate", "size" : 20, "tag" : "2_1"},
@@ -11,11 +17,6 @@
 		{"process_id": 2, "action": "release", "tag": "2_1"},
 		{"process_id": 1, "action": "release", "tag": "1_3"},
 
-		{"process_id": 3, "action": "allocate", "size" : 15, "tag" : "3_1"},
-
-		{"process_id": 1, "action" : "write", "tag" : "1_1", "data" : "hello"},
-		{"process_id": 1, "action" : "read", "tag" : "1_1", "length": 3, "expected": "hel"},
-		{"process_id" : 2, "action": "read", "tag" : "1_1", "length" : 4, "expected" : "hell" },
-		{"process_id" : 1, "action" : "release", "tag" : "1_1"}
+		{"process_id": 3, "action": "allocate", "size" : 15, "tag" : "3_1"}
 	]
 }
