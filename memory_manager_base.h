@@ -54,9 +54,9 @@ class MemoryManagerBase {
 
         // Data structure to keep track of allocated memory
         struct memory_block {
-            // Define the data members in this structure that will keep track
-            // of the available blocks of memory.
-            // Make sure to keep track of which process owns each block
+            // TODO: Define the data members in this structure that will keep track
+            //       of the available blocks of memory.
+            //       Make sure to keep track of which process owns each block
         };
 
         // List of blocks of memory
